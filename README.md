@@ -1,6 +1,17 @@
 # mayfay_hackaton
 
-A new Flutter project.
+A new MotionHack project.
+
+Sebuah Aplikasi tim pengembang tawarkan berupa produk yang berbentuk jasa dalam aplikasi. Aplikasi ini menawarkan beberapa fitur diantaranya:
+->Pencatatan pemasukan dan pengeluaran
+->Pencatatan tabungan
+->Berita tentang keuangan dan perkembangan ekonomi
+->Notifikasi tingkat keborosan
+->Pencatatan aktivitas keseharian
+->Pengingat aktivitas keseharian
+->Premium
+->Konsul dengan mentor keuangan(Jika premium)
+
 
 ## Getting Started
 
