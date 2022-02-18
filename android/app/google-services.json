@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1012745850127",
+    "project_id": "mayfay-hackaton",
+    "storage_bucket": "mayfay-hackaton.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1012745850127:android:14ea673d45d5357bed427a",
+        "android_client_info": {
+          "package_name": "com.example.mayfay_hackaton"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1012745850127-hkgsadj8ljqmgaf6stq31cvqqlqm49q5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5S-ukbw9bUDu6geL4AXPxJ8PTggC_Q3c"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1012745850127-hkgsadj8ljqmgaf6stq31cvqqlqm49q5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
