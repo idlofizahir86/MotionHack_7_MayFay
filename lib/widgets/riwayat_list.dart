@@ -1,21 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:intl/intl.dart';
+import 'package:mayfay_hackaton/model/keuangan_model.dart';
 import 'package:mayfay_hackaton/style.dart';
 
 class RiwayatList extends StatelessWidget {
-  final formatCurrency = NumberFormat.simpleCurrency(locale: 'id_ID');
-  final String judul;
-  final String keterangan;
-  final String tanggal;
-  final double nominal;
-  final bool pemasukkan;
-  RiwayatList({
+  final KeuanganModel keuangan;
+
+  final formatCurrency = NumberFormat.currency(
+    locale: 'id',
+    symbol: '',
+    decimalDigits: 0,
+  );
+  // final String judul;
+  // final String keterangan;
+  // final String tanggal;
+  // final double nominal;
+  // final bool pemasukkan;
+  RiwayatList(
+    this.keuangan, {
     Key? key,
-    this.judul = '',
-    this.keterangan = '',
-    this.tanggal = '',
-    this.nominal = 0,
-    this.pemasukkan = true,
+    // this.judul = '',
+    // this.keterangan = '',
+    // this.tanggal = '',
+    // this.nominal = 0,
+    // this.pemasukkan = true,
   }) : super(key: key);
 
   @override
@@ -31,12 +40,28 @@ class RiwayatList extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    SizedBox(
-                      height: 46,
-                      width: 46,
-                      child: CircleAvatar(
-                        backgroundColor: kGrey4Color,
-                      ),
+                    Stack(
+                      alignment: Alignment.center,
+                      children: [
+                        Container(
+                          height: 46,
+                          width: 46,
+                          decoration: BoxDecoration(
+                              color: kWhite1Color,
+                              borderRadius: BorderRadius.circular(50)),
+                        ),
+                        keuangan.pemasukkan
+                            ? SvgPicture.asset(
+                                'assets/icons/icon_bold_wallet.svg',
+                                width: 24,
+                                height: 24,
+                              )
+                            : SvgPicture.asset(
+                                'assets/icons/icon_bold_keranjang.svg',
+                                width: 24,
+                                height: 24,
+                              ),
+                      ],
                     ),
                   ],
                 ),
@@ -47,14 +72,14 @@ class RiwayatList extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        judul,
+                        keuangan.keterangan,
                         style: semiBoldTextStyle.copyWith(
                           fontSize: 14,
                           color: kSecondaryColor,
                         ),
                       ),
                       Text(
-                        keterangan,
+                        keuangan.deskripsi,
                         style: regulerTextStyle.copyWith(
                           fontSize: 10,
                           color: kGrey3Color,
@@ -70,7 +95,7 @@ class RiwayatList extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.end,
                     children: [
                       Text(
-                        tanggal,
+                        keuangan.tanggal,
                         style: regulerTextStyle.copyWith(
                           fontSize: 10,
                           color: kGrey3Color,
@@ -78,10 +103,11 @@ class RiwayatList extends StatelessWidget {
                       ),
                       const SizedBox(height: 3),
                       Text(
-                        '${pemasukkan ? '+' : '-'} ${formatCurrency.format(nominal)}',
+                        '${keuangan.pemasukkan ? '+' : '-'} ${formatCurrency.format(keuangan.nominal)}',
                         style: semiBoldTextStyle.copyWith(
                           fontSize: 14,
-                          color: pemasukkan ? kPrimaryColor : kRedColor,
+                          color:
+                              keuangan.pemasukkan ? kPrimaryColor : kRedColor,
                         ),
                       ),
                     ],

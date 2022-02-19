@@ -1,18 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:mayfay_hackaton/style.dart';
+import 'package:mayfay_hackaton/widgets/calender_container.dart';
 import 'package:mayfay_hackaton/widgets/custom_button.dart';
 import 'package:mayfay_hackaton/widgets/custom_text_new_field.dart';
 import 'package:mayfay_hackaton/widgets/drop_down.dart';
-import 'package:mayfay_hackaton/widgets/kategori_uang_button.dart';
+import 'package:mayfay_hackaton/widgets/test.dart';
 
-class KeuanganAddPage extends StatefulWidget {
-  const KeuanganAddPage({Key? key}) : super(key: key);
+class TodoListAddPage extends StatelessWidget {
+  const TodoListAddPage({Key? key}) : super(key: key);
 
-  @override
-  State<KeuanganAddPage> createState() => _KeuanganAddPageState();
-}
-
-class _KeuanganAddPageState extends State<KeuanganAddPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,7 +23,7 @@ class _KeuanganAddPageState extends State<KeuanganAddPage> {
                 child: Align(
                   alignment: Alignment.bottomCenter,
                   child: Text(
-                    'Tambah Catatan Baru',
+                    'Tambah Todo List Baru',
                     style: semiBoldTextStyle.copyWith(
                       fontSize: 16,
                       color: kBlackColor,
@@ -38,38 +34,27 @@ class _KeuanganAddPageState extends State<KeuanganAddPage> {
               const SizedBox(height: 26),
               Column(
                 children: [
-                  Container(
-                    margin: const EdgeInsets.symmetric(horizontal: 24),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        KategoriUang(
-                          title: 'Pemasukkan',
-                          color: kPrimaryColor,
-                        ),
-                        KategoriUang(
-                          title: 'Pengeluaran',
-                          color: kRedColor,
-                        ),
-                      ],
-                    ),
-                  ),
                   const DropDown(),
                   const CustomTextNewField(
-                    title: 'Nominal',
-                    hintText: 'Masukkan Nominal',
+                    title: 'Kegiatan',
+                    hintText: 'Tulis Kegiatanmu',
                     textInputAction: TextInputAction.next,
                     textInputType: TextInputType.number,
                   ),
-                  const CustomTextNewField(
-                    title: 'Keterangan',
-                    hintText: 'Tulis Keterangan',
-                    textInputAction: TextInputAction.next,
+                  const CalenderContainer(
+                    title: 'Tanggal',
+                    hintText: 'Pilih Tanggal',
+                  ),
+                  const TestDeh(),
+                  const CalenderContainer(
+                    title: 'Tanggal',
+                    hintText: 'Pilih Tanggal',
                   ),
                   const CustomTextNewField(
-                    title: 'Deskripsi',
-                    hintText: 'Tambahkan Deskripsi',
-                    textInputAction: TextInputAction.done,
+                    title: 'Catatan',
+                    hintText: 'Tambahkan Catatan',
+                    textInputAction: TextInputAction.next,
+                    textInputType: TextInputType.number,
                   ),
                   Container(
                     margin: const EdgeInsets.all(24),

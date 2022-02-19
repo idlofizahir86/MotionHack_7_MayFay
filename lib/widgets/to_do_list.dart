@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mayfay_hackaton/style.dart';
 
-class ToDoList extends StatelessWidget {
+class ToDoList extends StatefulWidget {
   final String judul;
   final String keterangan;
   final String hari;
@@ -16,6 +17,12 @@ class ToDoList extends StatelessWidget {
     this.tanggal = '',
   }) : super(key: key);
 
+  @override
+  State<ToDoList> createState() => _ToDoListState();
+}
+
+class _ToDoListState extends State<ToDoList> {
+  bool selesai = false;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -38,12 +45,24 @@ class ToDoList extends StatelessWidget {
         children: [
           Row(
             children: [
-              const SizedBox(
-                height: 24,
-                width: 24,
-                child: CircleAvatar(
-                  radius: 40,
-                  backgroundColor: Color(0xffF1F1F5),
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    selesai = !selesai;
+                  });
+                },
+                child: SizedBox(
+                  height: 24,
+                  width: 24,
+                  child: CircleAvatar(
+                    radius: 40,
+                    backgroundColor: const Color(0xffF1F1F5),
+                    child: selesai
+                        ? SvgPicture.asset(
+                            'assets/icons/icon_check_circle.svg',
+                          )
+                        : Container(),
+                  ),
                 ),
               ),
               const SizedBox(
@@ -53,14 +72,16 @@ class ToDoList extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
-                    judul,
+                    widget.judul,
                     style: mediumTextStyle.copyWith(
-                      fontSize: 14,
-                      color: kSecondaryColor,
-                    ),
+                        fontSize: 14,
+                        color: kSecondaryColor,
+                        decoration: selesai
+                            ? TextDecoration.lineThrough
+                            : TextDecoration.none),
                   ),
                   Text(
-                    keterangan,
+                    widget.keterangan,
                     style: regulerTextStyle.copyWith(
                       fontSize: 8,
                       color: kSecondaryColor,
@@ -74,14 +95,14 @@ class ToDoList extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                hari,
+                widget.hari,
                 style: mediumTextStyle.copyWith(
                   fontSize: 14,
                   color: kSecondaryColor,
                 ),
               ),
               Text(
-                '$waktu, $tanggal',
+                '${widget.waktu}, ${widget.tanggal}',
                 style: regulerTextStyle.copyWith(
                   fontSize: 8,
                   color: kSecondaryColor,

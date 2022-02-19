@@ -1,93 +1,99 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:mayfay_hackaton/pages/home_page.dart';
 import 'package:mayfay_hackaton/pages/keuangan_page.dart';
+import 'package:mayfay_hackaton/pages/news_page.dart';
+import 'package:mayfay_hackaton/pages/premium_page.dart';
+import 'package:mayfay_hackaton/pages/todolist_page.dart';
 import 'package:mayfay_hackaton/style.dart';
 
+// ignore: must_be_immutable
 class NavBar extends StatefulWidget {
-  const NavBar({Key? key}) : super(key: key);
+  int currentIndex;
+
+  NavBar({Key? key, this.currentIndex=0}) : super(key: key);
 
   @override
   _NavBarState createState() => _NavBarState();
 }
 
 class _NavBarState extends State<NavBar> {
-  int _currentIndex = 0;
-  List<Widget> children = const [
-    HomePage(),
-    KeuanganPage(),
-    Center(
-      child: Text(
-        "Ini adalah riwayat",
-      ),
-    ),
-    Center(
-      child: Text(
-        "Ini adalah riwayat",
-      ),
-    ),
-    Center(
-      child: Text(
-        "Ini adalah riwayat",
-      ),
-    ),
+  
+  List<Widget> children = [
+    const HomePage(),
+    const TodoListPage(),
+    const KeuanganPage(),
+    const NewsPage(),
+    const PremiumPage(),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: children.elementAt(_currentIndex),
+      body: children.elementAt(widget.currentIndex),
       bottomNavigationBar: Container(
-        height: 60,
-        decoration: BoxDecoration(
-          color: kGrey4Color,
+        height: 62,
+        decoration: const BoxDecoration(
+          boxShadow: [
+            BoxShadow(
+              offset: Offset(0, -4),
+              blurRadius: 20,
+              color: Color.fromRGBO(0, 0, 0, 0.05),
+            ),
+          ],
         ),
         child: BottomNavigationBar(
-          items: const [
+          items: [
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.explore,
+              icon: SvgPicture.asset(
+                widget.currentIndex == 0
+                    ? 'assets/icons/icon_bold_home.svg'
+                    : 'assets/icons/icon_home.svg',
               ),
               label: "Home",
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.assignment,
+              icon: SvgPicture.asset(
+               widget.currentIndex == 1
+                    ? 'assets/icons/icon_bold_todolist.svg'
+                    : 'assets/icons/icon_todolist.svg',
               ),
-              label: "Riwayat",
+              label: "Todo List",
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.assignment,
+              icon: SvgPicture.asset(
+                widget.currentIndex == 2
+                    ? 'assets/icons/icon_bold_wallet.svg'
+                    : 'assets/icons/icon_wallet.svg',
               ),
-              label: "Riwayat",
+              label: "Wallet",
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.assignment,
+              icon: SvgPicture.asset(
+                widget.currentIndex == 3
+                    ? 'assets/icons/icon_bold_news.svg'
+                    : 'assets/icons/icon_news.svg',
               ),
-              label: "Riwayat",
+              label: "News",
             ),
             BottomNavigationBarItem(
-              icon: Icon(
-                Icons.assignment,
+              icon: SvgPicture.asset(
+                widget.currentIndex == 4
+                    ? 'assets/icons/icon_buy.svg'
+                    : 'assets/icons/icon_buy.svg',
+                color: widget.currentIndex == 4 ? kPrimaryColor : kGrey4Color,
               ),
-              label: "Riwayat",
+              label: "Premium",
             ),
           ],
-          
-          backgroundColor: kGrey5Color,
+          backgroundColor: kWhite1Color,
           type: BottomNavigationBarType.fixed,
           iconSize: 30,
-          selectedItemColor: kPrimaryColor,
-          unselectedItemColor: kGrey1Color,
-          unselectedIconTheme: IconThemeData(color: kGrey1Color),
-          showUnselectedLabels: false,
           showSelectedLabels: false,
-          currentIndex: _currentIndex,
-          selectedIconTheme: IconThemeData(color: kPrimaryColor),
+          showUnselectedLabels: false,
           onTap: (val) {
             setState(() {
-              _currentIndex = val;
+              widget.currentIndex = val;
             });
           },
         ),
