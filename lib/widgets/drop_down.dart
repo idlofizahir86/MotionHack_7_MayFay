@@ -13,11 +13,10 @@ class DropDown extends StatefulWidget {
 class _DropDownState extends State<DropDown> {
   final List<String> kategori = [
     'Pemasukkan',
-    'Item 2',
-    'Item 3',
-    'Item 4',
-    'Item 5',
-    'Item 6',
+    'Belanja',
+    'Sosial',
+    'Gaji',
+    'Bonus',
   ];
 
   String? selectedValue;

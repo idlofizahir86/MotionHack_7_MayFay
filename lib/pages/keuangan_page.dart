@@ -6,6 +6,7 @@ import 'package:mayfay_hackaton/cubit/keuangan_cubit.dart';
 import 'package:mayfay_hackaton/model/keuangan_model.dart';
 import 'package:mayfay_hackaton/style.dart';
 import 'package:mayfay_hackaton/widgets/riwayat_list.dart';
+import 'package:mayfay_hackaton/widgets/test.dart';
 
 class KeuanganPage extends StatefulWidget {
   const KeuanganPage({Key? key}) : super(key: key);
@@ -214,20 +215,7 @@ class _KeuanganPageState extends State<KeuanganPage> {
                         ],
                       ),
                     ),
-                    Container(
-                      height: 36,
-                      width: 36,
-                      padding: const EdgeInsets.all(6),
-                      decoration: BoxDecoration(
-                          color: kWhite1Color,
-                          borderRadius: BorderRadius.circular(10),
-                          border: Border.all(
-                            color: kGrey5Color,
-                          )),
-                      child: SvgPicture.asset(
-                        'assets/icons/icon_filter.svg',
-                      ),
-                    ),
+                    const Filter(),
                   ],
                 ),
               ),

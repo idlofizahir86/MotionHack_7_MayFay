@@ -58,21 +58,21 @@ class TodoListPage extends StatelessWidget {
                 children: const [
                   ToDoList(
                     judul: 'Membeli Laptop',
-                    keterangan: 'Asas Vivibook 376',
+                    keterangan: 'Asus Vivibook 376',
                     hari: 'Minggu',
                     waktu: '09.00 AM',
                     tanggal: '20-02-2022',
                   ),
                   ToDoList(
-                    judul: 'Membeli Laptop',
-                    keterangan: 'Asas Vivibook 376',
-                    hari: 'Minggu',
-                    waktu: '09.00 AM',
-                    tanggal: '20-02-2022',
+                    judul: 'Membayar Kos',
+                    keterangan: 'Kos bulan Maret',
+                    hari: 'Rabu',
+                    waktu: '10.00 AM',
+                    tanggal: ' 04-03-2022',
                   ),
                   ToDoList(
-                    judul: 'Membeli Laptop',
-                    keterangan: 'Asas Vivibook 376',
+                    judul: 'Cicil Motor',
+                    keterangan: 'Bayar 600 ribu',
                     hari: 'Minggu',
                     waktu: '09.00 AM',
                     tanggal: '20-02-2022',
@@ -93,11 +93,11 @@ class TodoListPage extends StatelessWidget {
               Column(
                 children: const [
                   ToDoList(
-                    judul: 'Membeli Laptop',
-                    keterangan: 'Asas Vivibook 376',
-                    hari: 'Minggu',
+                    judul: 'Bayar Internet',
+                    keterangan: 'Bayar internet bulanan',
+                    hari: 'Senin',
                     waktu: '09.00 AM',
-                    tanggal: '20-02-2022',
+                    tanggal: '21-02-2022',
                   ),
                 ],
               ),
@@ -115,8 +115,8 @@ class TodoListPage extends StatelessWidget {
               Column(
                 children: const [
                   ToDoList(
-                    judul: 'Membeli Laptop',
-                    keterangan: 'Asas Vivibook 376',
+                    judul: 'Membayar Asuransi',
+                    keterangan: 'Bayar asuransi kesehatan AXI',
                     hari: 'Minggu',
                     waktu: '09.00 AM',
                     tanggal: '20-02-2022',

@@ -4,7 +4,6 @@ import 'package:mayfay_hackaton/widgets/calender_container.dart';
 import 'package:mayfay_hackaton/widgets/custom_button.dart';
 import 'package:mayfay_hackaton/widgets/custom_text_new_field.dart';
 import 'package:mayfay_hackaton/widgets/drop_down.dart';
-import 'package:mayfay_hackaton/widgets/test.dart';
 
 class TodoListAddPage extends StatelessWidget {
   const TodoListAddPage({Key? key}) : super(key: key);
@@ -45,7 +44,6 @@ class TodoListAddPage extends StatelessWidget {
                     title: 'Tanggal',
                     hintText: 'Pilih Tanggal',
                   ),
-                  const TestDeh(),
                   const CalenderContainer(
                     title: 'Tanggal',
                     hintText: 'Pilih Tanggal',

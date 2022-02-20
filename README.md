@@ -12,6 +12,13 @@ Sebuah Aplikasi tim pengembang tawarkan berupa produk yang berbentuk jasa dalam 
 ->Premium
 ->Konsul dengan mentor keuangan(Jika premium)
 
+Fitur yang belum selesai 
+-> Search Page
+-> Role User Premium
+-> CRUD Data belum sempurna
+-> Calender
+
+
 
 ## Getting Started
 

@@ -12,19 +12,9 @@ class RiwayatList extends StatelessWidget {
     symbol: '',
     decimalDigits: 0,
   );
-  // final String judul;
-  // final String keterangan;
-  // final String tanggal;
-  // final double nominal;
-  // final bool pemasukkan;
   RiwayatList(
     this.keuangan, {
     Key? key,
-    // this.judul = '',
-    // this.keterangan = '',
-    // this.tanggal = '',
-    // this.nominal = 0,
-    // this.pemasukkan = true,
   }) : super(key: key);
 
   @override
